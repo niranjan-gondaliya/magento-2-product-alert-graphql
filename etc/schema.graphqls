@@ -1,0 +1,13 @@
+type Mutation {
+    ProductAlertNotifyInStock(input: SubmitInput): ProductAlertNotifyInStockOutput @resolver(class: "Niks\\ProductAlertGraphQl\\Model\\Resolver\\Stock") @doc(description: "Guest add new Stock alert.")
+}
+
+input SubmitInput {
+	product_id: Int! @doc(description: "The product id."),
+    email: String! @doc(description: "The customer Email."),
+}
+
+type ProductAlertNotifyInStockOutput {
+    message: String @doc(description: "Success or error Message")
+    id: Int @doc(description: "The Question id")
+}
