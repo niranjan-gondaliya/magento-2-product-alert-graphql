@@ -18,6 +18,7 @@ Magento 2 not providing GraphQL features for Magento_ProductAlert extension, So 
 
 # GraphQL Mutation
 
+```
 mutation {
 	ProductAlertNotifyInStock(
 		input: { product_id: 94, email: "niksemail@niksemail.com" }
@@ -26,3 +27,4 @@ mutation {
 		id
 	}
 }
+```
