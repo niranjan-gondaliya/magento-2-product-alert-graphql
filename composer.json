@@ -3,6 +3,9 @@
     "description": "Magento 2 does not provide GraphQL features for Magento_ProductAlert extension, So i have created GraphQL extension for Magento_ProductAlert. In this module Guest & Customer both can subscribe product stock email notification.",
     "type": "magento2-module",
     "autoload": {
+        "files": [
+            "registration.php"
+        ],
         "psr-4": {
             "Niks\\ProductAlertGraphQl\\": ""
         }
