@@ -33,7 +33,7 @@ class Stock implements ResolverInterface
         if (!isset($args['input']['product_id']) || empty($args['input']['product_id'])) {
             throw new GraphQlInputException(__('Product id is required.'));
         }
-        
+
         if (!isset($args['input']['email']) || empty(trim($args['input']['email']))) {
             throw new GraphQlInputException(__('Email address is required.'));
         }
@@ -65,11 +65,14 @@ class Stock implements ResolverInterface
             }
 
             if ($stockCollection->getSize() > 0) {
+                $stockModel->deleteCustomer($customer->getId());
+
                 return [
-                    'message' => "Thank you! You are already subscribed to this product."
+                    'message' => "You've succesfully unsubscribed from this product."
                 ];
             } else {
                 $stockModel->save();
+
                 return [
                     'message' => 'Alert subscription has been saved',
                     'id' => $stockModel->getId()
